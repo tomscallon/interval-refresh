@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>[to do]</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+<body class="root">
+  <div id="controls" class="controls">
+    <label for="url-control" class="control-label">URL:</label>
+    <input
+      id="url-control"
+      name="url-control"
+      class="control-input"
+      placeholder="Enter page URL"
+      autofocus
+    />
+    <label for="interval-control" class="control-label">Refresh Interval:</label>
+    <input
+      id="interval-control"
+      name="interval-control"
+      class="control-input"
+      type="number"
+      min=1000
+      placeholder="in ms"
+      value="1000"
+    />
+    <button id="refresh-now-control" name="refresh-now-control" class="button">
+      Refresh Now
+    </button>
+  </div>
+  <iframe id="frame"></iframe>
+</body>
+</html>
