@@ -4,6 +4,7 @@
   height: 0px;
   font-family: 'Nunito', Helvetica, sans-serif;
   font-size: 14px;
+  overflow: none;
 }
 
 .controls {
