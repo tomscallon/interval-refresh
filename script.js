@@ -101,5 +101,27 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshInterval = val;
   });
 
-  eRefreshButton.addEventListener('click', () => refresh())
+  eRefreshButton.addEventListener('click', () => refresh());
+
+  // Finally, check the URL for initial parameters.
+  const hash = window.location.hash.substring(1);
+
+  if (!hash) return;
+
+  const splitIndex = hash.indexOf('&');
+
+  if (splitIndex === -1) {
+    console.log('Hash ignored. Expected <interval>&<url>');
+  }
+
+  const interval = +hash.substring(0, splitIndex);
+  const url = hash.substring(splitIndex + 1);
+
+  console.log('Parsed hash.', 'Interval:', interval, 'URL:', url);
+
+  if (url && interval) {
+    eFrame.src = eUrlControl.value = url;
+    refreshInterval = eIntervalControl.value = interval;
+    toggleControls();
+  }
 });
